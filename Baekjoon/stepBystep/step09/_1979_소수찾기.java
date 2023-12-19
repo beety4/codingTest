@@ -13,16 +13,24 @@ public class _1979_소수찾기 {
 		
 		int repeat = Integer.parseInt(br.readLine());
 		StringTokenizer st = new StringTokenizer(br.readLine());
+		int result = 0;
 		for(int i=0; i<repeat; i++) {
 			int n = Integer.parseInt(st.nextToken());
 			
-			for(int j=0; j<n; j++) {
-				
+			boolean check = true;
+			for(int j=2; j<n; j++) {
+				if(n%j == 0) {
+					check = false;
+					break;
+				}
 			}
 			
-			
-			
+			if(check && n != 1) {
+				result++;
+			}
 		}
+		
+		System.out.println(result);
 		
 	}
 }
