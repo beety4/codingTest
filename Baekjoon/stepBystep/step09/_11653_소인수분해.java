@@ -12,30 +12,15 @@ public class _11653_소인수분해 {
 		int n = Integer.parseInt(br.readLine());
 		
 		int i = 2;
-		while(true) {
+		while(n > 1) {
 			if(n%i == 0) {
-				n = n/i;
 				System.out.println(i);
+				n /= i;
 				i = 2;
-				
-				boolean check = true;
-				for(int j=2; j<n; j++) {
-					if(n%j == 0) {
-						check = false;
-						break;
-					}
-				}
-				
-				System.out.println("==> " + i );
-				if(check && n != 1) {
-					return;
-				}
 			} else {
 				i++;
 			}
-			System.out.println("efefefefefefefefef");
 		}
-		
 		
 	}
 }
