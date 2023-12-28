@@ -34,11 +34,6 @@ public class _2798_블랙잭 {
 				System.out.println(arr[k] + " // " + j);
 			}
 			
-			if(k == n-1) {
-				break;
-			} else {
-				k++;
-			}
 		}
 		
 		System.out.println(result);
