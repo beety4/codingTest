@@ -3,6 +3,7 @@ package Baekjoon.stepBystep.step12;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.StringTokenizer;
@@ -23,6 +24,18 @@ public class _2798_블랙잭 {
 			arr[i] = Integer.parseInt(st.nextToken());
 		}
 		
+		ArrayList<Integer> list = new ArrayList<>();
+		while(true) {
+			if(sum(list) < m) {
+				list.
+			}
+			list.add(arr[0]);
+		}
+		
+		
+		
+		
+		
 		Arrays.sort(arr, Collections.reverseOrder());
 		int j = 3;
 		int k = 0;
@@ -39,4 +52,15 @@ public class _2798_블랙잭 {
 		System.out.println(result);
 	}
 
+	public static int sum(ArrayList list) {
+		if(list.isEmpty() == false) {
+			int value = 0;
+			for(int i=0; i<list.size(); i++) {
+				value += (int)list.get(i);
+			}
+			return value;
+		} else {
+			return 0;
+		}
+	}
 }
