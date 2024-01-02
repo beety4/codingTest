@@ -27,9 +27,13 @@ public class _2798_블랙잭 {
 		ArrayList<Integer> list = new ArrayList<>();
 		while(true) {
 			if(sum(list) < m) {
-				list.
+				list.add(arr[0]);
 			}
 			list.add(arr[0]);
+			
+			if(true) {
+				break;
+			}
 		}
 		
 		
