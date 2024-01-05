@@ -25,6 +25,7 @@ public class _1926_간단한369게임 {
 				} else {
 					System.out.print(num + " ");
 				}
+				
 			}
 		}
 	}
