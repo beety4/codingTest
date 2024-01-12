@@ -16,15 +16,17 @@ public class _11005_진법변환2 {
 		int b = Integer.parseInt(st.nextToken());
 		
 		int i = 0;
-		while(n/b == 0) {
+		while(n % b >= 1) {
 			n /= b;
 			i++;
+			System.out.println(n/b);
 		}
 		
 		for(int j=0; j<=i; j++) {
-			System.out.print((char)(i+86));
+			System.out.print((char)(b+54));
 		}
-		System.out.println(n);
+		//System.out.println(n);
+		//System.out.println(n == b-1 ? "" : n);
 
 	}
 
