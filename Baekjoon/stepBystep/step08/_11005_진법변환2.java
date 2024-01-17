@@ -25,8 +25,9 @@ public class _11005_진법변환2 {
 		for(int j=0; j<=i; j++) {
 			System.out.print((char)(b+54));
 		}
-		//System.out.println(n);
-		//System.out.println(n == b-1 ? "" : n);
+		
+		System.out.println(n);
+		System.out.println(n == b-1 ? "" : n);
 
 	}
 
