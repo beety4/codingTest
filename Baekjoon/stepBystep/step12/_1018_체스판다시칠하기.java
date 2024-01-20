@@ -15,37 +15,45 @@ public class _1018_체스판다시칠하기 {
 		int n = Integer.parseInt(st.nextToken());
 		int m = Integer.parseInt(st.nextToken());
 		
-		int add = 1;
-		char[] board = new char[64];
-//		for(int i=1; i<=n; i++) {
-//			String line = br.readLine();
-//			for(int j=0; j<m; j++) {
-//				board[i*add + j] = line.charAt(j-1);
-//			}
-//			add++;
-//		}
+		// 체스판 입력
+		String[] lines = new String[n];
+		for(int i=0; i<n; i++) {
+			lines[i] = br.readLine();
+		}
 		
-		//System.out.println(chkBoard(board, n, m));
-		
-		for(int k=0; k<n; k++) {
-			for(int l=0; l<m; l++) {
-				System.out.print(k*8 + l + " ");
+		// 8x8의 가능한 모든 체스판 경우의 수 검색
+		int min = 33;
+		for(int i=0; i<n-7; i++) {
+			int s1 = i;
+			int e1 = i+8;
+			
+			for(int j=0; j<m-7; j++) {
+				int s2 = j;
+				int e2 = j+8;
+				
+				int cnt = 0;
+				char pre = lines[0].charAt(0) == 'W' ? 'B' : 'W';
+				for(int k=s1; k<e1; k++) {
+					for(int l=s2; l<e2; l++) {
+						char now = lines[k].charAt(l);
+						if((l == 0 && now != pre) || now == pre) {
+							cnt++;
+						} 
+						
+						
+						//if(k%8 != 0 && now == pre) {
+						//	System.out.println("s1 : " + k + " // s2 : " + l);
+						//	cnt++;
+						//}
+						pre = now;
+					}
+				}
+				
+				min = (cnt < min) ? cnt : min;
 			}
-			add++;
+		
+			System.out.println(min);
+		
 		}
 	}
-	
-	public static int chkBoard(char[] board, int n, int m) {
-		int cnt = 0;
-		char pre = board[0] == 'W' ? 'W' : 'B';
-		for(int i=0; i<n*m; i++) {
-			if(board[i] == pre) {
-				cnt++;
-				System.out.print(board[i]);
-			}
-			pre = board[i] == 'W' ? 'B' : 'W';
-		}
-		return cnt;
-	}
-
 }
